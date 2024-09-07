@@ -1,0 +1,4 @@
+codigo base: 
+
+para executar um codigo em flask voce tem que digitar:
+flask --app "07/07.py" run
