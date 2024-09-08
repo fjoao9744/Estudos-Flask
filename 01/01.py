@@ -14,3 +14,5 @@ def pagina_inicial(): #criação da pagina inicial
 
 if __name__ == '__main__': #para evitar problemas
     app.run(debug = True) #colocar no ar #debug -> é pra atualizar sempre
+
+    
