@@ -11,7 +11,9 @@ app = Flask(__name__)
 def pagina_inicial(): 
     return render_template("pagina-inicial.html") 
 
-
+@app.route("/pag01")
+def pagina01():
+    return render_template("pagina01.html")
 
 
 
