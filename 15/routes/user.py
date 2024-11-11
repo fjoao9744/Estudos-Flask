@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from database.users import USUARIOS
 
 
@@ -10,7 +10,18 @@ def lista_usuarios():
 
 @user_route.route('/', methods=["POST"]) #inserir os dados do cliente no banco de dados
 def inserir_usuarios():
-    pass
+    
+    data = request.json # isso ta vindo do front-end("enviar")
+
+    new_user = {
+        "id" : len(USUARIOS) + 1,
+        "nome" : data["nome"],
+        "email" : data["email"]
+    }
+
+    USUARIOS.append(new_user)
+    return render_template("item_user.html", user=new_user)
+
 @user_route.route('/new') #formulario para criar um user
 def form_cliente():
     return render_template("new-user.html")
